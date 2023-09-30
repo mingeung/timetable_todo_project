@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Create from "./components/Create";
 import Category from "./components/Category";
+import "./Todo.css";
 
 function List({ todos, handleRemove, handleChecked }) {
   return (
@@ -33,8 +34,6 @@ function Todo() {
   const [todos, setTodos] = useState(
     JSON.parse(localStorage.getItem("todoList")) || []
   );
-  //완료된 목록 개수 세기
-  // const [checked, setChecked] = useState(0);
 
   //할일 목록이 변경될 때마다 Local Storage에 저장
   useEffect(() => {
@@ -60,6 +59,7 @@ function Todo() {
         modify: false,
       };
       //checked가 true인 값을 가져오기 위함
+      setTodos((currentArray) => [...currentArray, todo]);
     }
   };
 
@@ -70,7 +70,6 @@ function Todo() {
 
   //완료 기능
   //삼항 연산자에 여러 값 쓰고 싶을 때는 소괄호로 묶어주면 된다.
-  //체크표시 된 거 list로 만들기
   const handleChecked = (id) => {
     setTodos(
       todos.map((todoItem) =>
@@ -80,6 +79,10 @@ function Todo() {
       )
     );
   };
+  //전체 tood 개수
+  const todoCount = todos.length;
+  //완료 개수 세기 chatGPT가 알려줌 ㅎ
+  const checkedCount = todos.filter((todo) => todo.checked === true).length;
 
   //todo 생성 + 리스트로 나누기
   return (
@@ -92,8 +95,7 @@ function Todo() {
       />
 
       <Create handleAddTodo={handleAddTodo} />
-      <div>{todos.length}</div>
-      <div>{(todos.checked === true).length}</div>
+      <div>{Math.floor((checkedCount / todoCount) * 100)} %</div>
     </div>
   );
 }

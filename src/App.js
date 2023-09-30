@@ -36,7 +36,6 @@ function App() {
     "23",
     "24",
   ];
-  const work = ["공부", "운동", "취침"];
 
   return (
     <div>
