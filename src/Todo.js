@@ -1,26 +1,27 @@
 import { useState, useEffect } from "react";
 import Create from "./components/Create";
 import Category from "./components/Category";
-import "./Todo.module.css";
+import "./Todo.css";
 
 function List({ todos, handleRemove, handleChecked }) {
   return (
-    <ul>
+    <ul className="total-todo-list">
       {todos.map((todo, index) => {
         return (
           <li key={index}>
-            <div>
-              <span className={`${todo.checked ? "checked" : ""}`}>
-                {todo.text}
-              </span>
+            <div className="todo-list">
               <span
                 onClick={() => {
                   handleChecked(todo.id);
                 }}
               >
-                ✅
+                ✔
               </span>
-              <span onClick={() => handleRemove(todo.id)}>❌</span>
+              <span className={`${todo.checked ? "checked" : ""}`}>
+                {todo.text}
+              </span>
+
+              <span onClick={() => handleRemove(todo.id)}>Ⅹ</span>
             </div>
           </li>
         );
@@ -86,7 +87,7 @@ function Todo() {
 
   //todo 생성 + 리스트로 나누기
   return (
-    <div>
+    <div className="todo1">
       <Category />
       <List
         todos={todos}
@@ -95,7 +96,9 @@ function Todo() {
       />
 
       <Create handleAddTodo={handleAddTodo} />
-      <div>{Math.floor((checkedCount / todoCount) * 100)} %</div>
+      <div className="percent">
+        {Math.floor((checkedCount / todoCount) * 100)} %
+      </div>
     </div>
   );
 }

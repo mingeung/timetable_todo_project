@@ -17,81 +17,132 @@ function App() {
   const [DailyView, setDailyView] = useState(false);
 
   const TimeList = [
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "23:00",
+    "24:00",
   ];
   const img = new Image();
   img.src = `image/dropdown-down`;
 
   return (
-    <div>
+    <div id="full">
       <div className="navi">
         <div className="left-navi">
           <h1 id="title">dalpaeng todo</h1>
-          <div id="date"></div>
-          <span className="today">{today}</span>
-          <span className="day"> {day}</span>
+          <div id="date">
+            <span className="today">{today}</span>
+            <span className="day"> {day}</span>
+          </div>
         </div>
-        <div id="daily-dropdown">
-          <ul
-            onClick={() => {
-              setDailyView(!DailyView);
-            }}
-          >
-            Daily {DailyView ? "^" : "⌄"}
-            {DailyView && <DailyDropDown />}
-          </ul>
+        <div id="right-navi">
+          <div id="daily-dropdown">
+            <ul
+              onClick={() => {
+                setDailyView(!DailyView);
+              }}
+              className="daily-dropdown-ul"
+            >
+              Daily {DailyView ? "^" : "⌄"}
+              {DailyView && <DailyDropDown />}
+            </ul>
+          </div>
+
+          <button id="light">light</button>
+
+          <button id="profile">profile</button>
         </div>
-
-        <button id="light">light</button>
-
-        <button id="profile">profile</button>
       </div>
-      <h1>Category</h1>
-      <div className="categroy">
-        <UserWriteTodo
-          placeholder="카테고리 1"
-          setUserTodo={setUserTodo}
-          userTodo={userTodo}
-        />
-        <UserWriteTodo
-          placeholder="카테고리 2"
-          setUserTodo={setUserTodo}
-          userTodo={userTodo}
-        />
-        <UserWriteTodo
-          placeholder="카테고리 3"
-          setUserTodo={setUserTodo}
-          userTodo={userTodo}
-        />
-        <UserWriteTodo
-          placeholder="카테고리 4"
-          setUserTodo={setUserTodo}
-          userTodo={userTodo}
-        />
-      </div>
-      <h1>Timetable</h1>
-      <TimeDropDown List={TimeList} />
-      <TimeDropDown List={TimeList} />
-      <TimeDropDown List={userTodo} />
-      <div className="main">
-        <h1>todo</h1>
-        <Todo />
+      <div id="body">
+        <div>
+          <h2>Category</h2>
+          <div className="categroy">
+            <UserWriteTodo
+              placeholder="카테고리 1"
+              setUserTodo={setUserTodo}
+              userTodo={userTodo}
+            />
+            <UserWriteTodo
+              placeholder="카테고리 2"
+              setUserTodo={setUserTodo}
+              userTodo={userTodo}
+            />
+            <UserWriteTodo
+              placeholder="카테고리 3"
+              setUserTodo={setUserTodo}
+              userTodo={userTodo}
+            />
+            <UserWriteTodo
+              placeholder="카테고리 4"
+              setUserTodo={setUserTodo}
+              userTodo={userTodo}
+            />
+          </div>
+          <h2 id="timetable-big-title">Timetable</h2>
+          <div className="timetable-title">
+            <p>시작시간</p>
+            <p>종료시간</p>
+            <p>카테고리</p>
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+          <div className="timetable">
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={TimeList} />
+            <TimeDropDown List={userTodo} />
+          </div>
+        </div>
+        <div>
+          <div id="todo-box">
+            <h2>todo</h2>
+            <div className="todo3">
+              <Todo />
+              <Todo />
+              <Todo />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

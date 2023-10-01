@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Category.css";
 
 function Category() {
   //⭐️카테고리 만들기⭐️
@@ -28,8 +29,13 @@ function Category() {
     setCategory(category);
   };
   return (
-    <form onSubmit={onSubmitCate}>
-      <input onChange={onChangeCategory} value={category} type="text" />
+    <form onSubmit={onSubmitCate} className="category-form">
+      <input
+        onChange={onChangeCategory}
+        value={category}
+        type="text"
+        className="todo-category"
+      />
     </form>
   );
 }

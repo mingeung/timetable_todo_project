@@ -1,8 +1,10 @@
+import "./DailyDropDown.css";
+
 function DailyDropDown() {
   return (
     <div>
-      <li>Monthly</li>
-      <li>Weekly</li>
+      <li className="dailydropdown-li">Monthly</li>
+      <li className="dailydropdown-li">Weekly</li>
     </div>
   );
 }

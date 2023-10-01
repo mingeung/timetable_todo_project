@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./UserWriteTodo.css";
 
 //<UserWriteTodo placeholder="할 일1" />
 //전달해야 하는 정보: writetodo 값
@@ -19,12 +20,13 @@ function UserWriteTodo({ placeholder, setUserTodo }) {
   //드롭다운에 띄울 내용
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form className="category-form" onSubmit={onSubmit}>
         <input
           value={writeTodo}
           onChange={onChange}
           type="text"
           placeholder={placeholder}
+          className="category-input"
         />
       </form>
     </div>

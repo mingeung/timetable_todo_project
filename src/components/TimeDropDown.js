@@ -1,6 +1,7 @@
 //코드 참고 https://velog.io/@poiu0329/React-드롭다운-구현하기
 
 import { useRef, useState } from "react";
+import "./TimeDropDown.css";
 
 import useDetectClose from "../hooks/useDetectClose";
 import { PhoneDropDown } from "../components/PhoneDropDown";
@@ -13,12 +14,13 @@ const TimeDropDown = ({ List }) => {
   return (
     <div ref={dropDownRef}>
       <input
+        className="input"
         onClick={() => setIsOpen(!isOpen)}
         type="button"
         value={phoneIdentify}
       />
       {isOpen && (
-        <ul>
+        <ul className="list">
           {List.map((value, index) => (
             <PhoneDropDown
               key={index}

@@ -1,0 +1,14 @@
+.add-todo {
+  border-left-width: 0;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom: 1px solid #bcbcbc;
+  width: 180px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+/* 선택 시 테두리 생기는 거 없애기 */
+input:focus {
+  outline: none;
+}

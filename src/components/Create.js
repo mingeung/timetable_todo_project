@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Create.css";
 
 const Create = ({ handleAddTodo }) => {
   // 각각의 todo를 담을 배열 만들기 (나중에 value에 들어갈 것임)
@@ -18,8 +19,8 @@ const Create = ({ handleAddTodo }) => {
   return (
     <>
       <form onSubmit={todoListAdd}>
-        <input value={value} onChange={onChange}></input>
-        <button>추가</button>
+        <input className="add-todo" value={value} onChange={onChange}></input>
+        {/* <button>추가</button> */}
       </form>
     </>
   );

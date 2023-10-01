@@ -1,0 +1,28 @@
+.checked {
+  text-decoration: line-through;
+}
+.total-todo-list {
+  list-style: none;
+  padding-left: 0;
+  width: 200px;
+  margin-top: 0;
+}
+.todo-list {
+  margin-left: 19px;
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  margin-bottom: 10px;
+}
+.percent {
+  margin-top: 100px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 70px;
+}
+.todo1 {
+  height: 572px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

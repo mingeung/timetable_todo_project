@@ -7,5 +7,75 @@ body {
 }
 .categroy {
   display: grid;
-  grid-template: 1fr 1fr / 1fr 1fr;
+  grid-template: 1fr 1fr / 200px 100px;
+}
+.timetable {
+  display: flex;
+}
+.timetable-title {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  color: #888787;
+  font-size: 15px;
+}
+#body {
+  display: flex;
+  height: 670px;
+}
+#todo-box {
+  margin: 0 0px 70px 100px;
+  width: 800px;
+  height: 631px;
+}
+.todo3 {
+  display: flex;
+  gap: 100px;
+  align-items: stretch;
+}
+#full {
+  margin: 38px 72px 0 72px;
+}
+#date {
+  font-family: "Inter", sans-serif;
+  color: #888787;
+}
+#right-navi {
+  display: flex;
+  gap: 30px;
+}
+#daily-dropdown {
+  box-shadow: 3px 3px 3px 3px #dfdfdf;
+  width: 127px;
+  height: 33px;
+  padding-top: 0;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.daily-dropdown-ul {
+  margin-top: 7px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+#light {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  border: none;
+  box-shadow: 3px 3px 3px 3px #dfdfdf;
+  font-weight: 800;
+  color: #dfdfdf;
+  background-color: black;
+}
+#profile {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  border: none;
+  box-shadow: 3px 3px 3px 3px #dfdfdf;
+  font-weight: 800;
+}
+#timetable-big-title {
+  margin-top: 40px;
+  margin-bottom: 10px;
 }

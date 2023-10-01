@@ -1,0 +1,8 @@
+.timetable-li {
+  border-bottom: 1px solid #ffffff;
+  padding: 5px;
+  padding-left: 50px;
+}
+.timetable-li:hover {
+  background-color: #d9d9d9;
+}
