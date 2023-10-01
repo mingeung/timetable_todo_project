@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Create from "./components/Create";
 import Category from "./components/Category";
-import "./Todo.css";
+import "./Todo.module.css";
 
 function List({ todos, handleRemove, handleChecked }) {
   return (

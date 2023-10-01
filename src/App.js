@@ -1,7 +1,7 @@
 import { useState } from "react";
+import "./App.css";
 import Todo from "./Todo";
 import DailyDropDown from "./components/DailyDropDown";
-import MenuDropDown from "./components/MenuDropDown";
 import moment from "moment";
 import TimeDropDown from "./components/TimeDropDown";
 import UserWriteTodo from "./components/UserWriteTodo";
@@ -15,7 +15,6 @@ function App() {
 
   //드롭다운 기능 넣기
   const [DailyView, setDailyView] = useState(false);
-  const [MenuView, setMenuView] = useState(false);
 
   const TimeList = [
     "08",
@@ -36,52 +35,57 @@ function App() {
     "23",
     "24",
   ];
+  const img = new Image();
+  img.src = `image/dropdown-down`;
 
   return (
     <div>
       <div className="navi">
-        <h1>dalpaeng todo</h1>
-        <div>
-          <p className="today">{today}</p>
-          <p className="day">{day}</p>
+        <div className="left-navi">
+          <h1 id="title">dalpaeng todo</h1>
+          <div id="date"></div>
+          <span className="today">{today}</span>
+          <span className="day"> {day}</span>
+        </div>
+        <div id="daily-dropdown">
+          <ul
+            onClick={() => {
+              setDailyView(!DailyView);
+            }}
+          >
+            Daily {DailyView ? "^" : "⌄"}
+            {DailyView && <DailyDropDown />}
+          </ul>
         </div>
 
-        <ul
-          onClick={() => {
-            setDailyView(!DailyView);
-          }}
-        >
-          Daily {DailyView ? "＾" : "⌄"}
-          {DailyView && <DailyDropDown />}
-        </ul>
+        <button id="light">light</button>
 
-        <button>light</button>
-        <ul
-          onClick={() => {
-            setMenuView(!MenuView);
-          }}
-        >
-          Menu {MenuView ? "^" : "⌄"}
-          {MenuView && <MenuDropDown />}
-        </ul>
+        <button id="profile">profile</button>
       </div>
-      <h1>타임테이블</h1>
-      <UserWriteTodo
-        placeholder="할일 1"
-        setUserTodo={setUserTodo}
-        userTodo={userTodo}
-      />
-      <UserWriteTodo
-        placeholder="할일 2"
-        setUserTodo={setUserTodo}
-        userTodo={userTodo}
-      />
-      <UserWriteTodo
-        placeholder="할일 3"
-        setUserTodo={setUserTodo}
-        userTodo={userTodo}
-      />
-
+      <h1>Category</h1>
+      <div className="categroy">
+        <UserWriteTodo
+          placeholder="카테고리 1"
+          setUserTodo={setUserTodo}
+          userTodo={userTodo}
+        />
+        <UserWriteTodo
+          placeholder="카테고리 2"
+          setUserTodo={setUserTodo}
+          userTodo={userTodo}
+        />
+        <UserWriteTodo
+          placeholder="카테고리 3"
+          setUserTodo={setUserTodo}
+          userTodo={userTodo}
+        />
+        <UserWriteTodo
+          placeholder="카테고리 4"
+          setUserTodo={setUserTodo}
+          userTodo={userTodo}
+        />
+      </div>
+      <h1>Timetable</h1>
       <TimeDropDown List={TimeList} />
       <TimeDropDown List={TimeList} />
       <TimeDropDown List={userTodo} />
