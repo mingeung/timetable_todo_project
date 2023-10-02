@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./Category.css";
 
-function Category() {
+//`"todoList"${number}`
+
+function Category({ number }) {
   //⭐️카테고리 만들기⭐️
   const [category, setCategory] = useState(
-    JSON.parse(localStorage.getItem("categoryList")) || ""
+    JSON.parse(localStorage.getItem(`"categoryList"${number}`)) || ""
   );
 
   //카테고리가 변경될 때마다 Local Storage에 저장
   useEffect(() => {
-    localStorage.setItem("categoryList", JSON.stringify(category));
+    localStorage.setItem(`"categoryList"${number}`, JSON.stringify(category));
   }, [category]);
   //브라우저 local storage에서 데이터를 가져와 초기 카테고리을 설정하는 함수
   useEffect(() => {
-    const storedCategory = JSON.parse(localStorage.getItem("categoryList"));
+    const storedCategory = JSON.parse(
+      localStorage.getItem(`"categoryList"${number}`)
+    );
     if (storedCategory) {
       setCategory(storedCategory);
     }

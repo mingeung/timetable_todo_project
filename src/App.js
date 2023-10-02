@@ -5,9 +5,20 @@ import DailyDropDown from "./components/DailyDropDown";
 import moment from "moment";
 import TimeDropDown from "./components/TimeDropDown";
 import UserWriteTodo from "./components/UserWriteTodo";
+import { Globalstyle } from "./theme/Global";
+import { darkTheme, lightTheme } from "./theme/theme";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   const [userTodo, setUserTodo] = useState([]);
+  //다크모드
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme(() => {
+      return theme === "dark" ? "light" : "dark";
+    });
+  };
 
   //오늘 날짜 넣기
   const today = moment().format("YYYY-MM-DD");
@@ -60,8 +71,18 @@ function App() {
               {DailyView && <DailyDropDown />}
             </ul>
           </div>
-
-          <button id="light">light</button>
+          {/* 다크모드 */}
+          <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+            <Globalstyle />
+            <button
+              id="light"
+              type="button"
+              onClick={toggleTheme}
+              theme={theme}
+            >
+              {theme === "dark" ? "light" : "dark"}
+            </button>
+          </ThemeProvider>
 
           <button id="profile">profile</button>
         </div>
@@ -137,9 +158,9 @@ function App() {
           <div id="todo-box">
             <h2>todo</h2>
             <div className="todo3">
-              <Todo />
-              <Todo />
-              <Todo />
+              <Todo number={1} />
+              <Todo number={2} />
+              <Todo number={3} />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 .checked {
   text-decoration: line-through;
+  color: #bcbcbc;
 }
 .total-todo-list {
   list-style: none;
@@ -15,6 +16,8 @@
   margin-bottom: 10px;
 }
 .percent {
+  position: fixed;
+  bottom: 150px;
   margin-top: 100px;
   font-size: 20px;
   font-weight: 700;

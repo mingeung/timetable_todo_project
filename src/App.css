@@ -63,9 +63,11 @@ body {
   height: 65px;
   border: none;
   box-shadow: 3px 3px 3px 3px #dfdfdf;
+
   font-weight: 800;
   color: #dfdfdf;
   background-color: black;
+  font-size: 13px;
 }
 #profile {
   border-radius: 50%;
@@ -74,6 +76,7 @@ body {
   border: none;
   box-shadow: 3px 3px 3px 3px #dfdfdf;
   font-weight: 800;
+  font-size: 13px;
 }
 #timetable-big-title {
   margin-top: 40px;

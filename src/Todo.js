@@ -30,19 +30,21 @@ function List({ todos, handleRemove, handleChecked }) {
   );
 }
 
-function Todo() {
+function Todo({ number }) {
   //todo list 넣기
   const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todoList")) || []
+    JSON.parse(localStorage.getItem(`"todoList"${number}`)) || []
   );
 
   //할일 목록이 변경될 때마다 Local Storage에 저장
   useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(todos));
+    localStorage.setItem(`"todoList"${number}`, JSON.stringify(todos));
   }, [todos]);
   //브라우저 local storage에서 데이터를 가져와 초기 할일 목록을 설정하는 함수
   useEffect(() => {
-    const storedTodoList = JSON.parse(localStorage.getItem("todoList"));
+    const storedTodoList = JSON.parse(
+      localStorage.getItem(`"todoList"${number}`)
+    );
     if (storedTodoList) {
       setTodos(storedTodoList);
     }
@@ -54,7 +56,8 @@ function Todo() {
       return;
     } else {
       const todo = {
-        id: todos.length,
+        // id: todos.length,
+        id: Math.random(),
         text,
         checked: false,
         modify: false,
@@ -88,7 +91,7 @@ function Todo() {
   //todo 생성 + 리스트로 나누기
   return (
     <div className="todo1">
-      <Category />
+      <Category number={number} />
       <List
         todos={todos}
         handleRemove={handleRemove}
