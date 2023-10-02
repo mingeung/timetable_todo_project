@@ -6,12 +6,12 @@ import moment from "moment";
 import TimeDropDown from "./components/TimeDropDown";
 import UserWriteTodo from "./components/UserWriteTodo";
 import { Globalstyle } from "./theme/Global";
-import { darkTheme, lightTheme } from "./theme/theme";
+import { darkTheme, lightTheme } from "./theme/Theme";
 import { ThemeProvider } from "styled-components";
 
 function App() {
   const [userTodo, setUserTodo] = useState([]);
-  //다크모드
+  //다크모드s
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {

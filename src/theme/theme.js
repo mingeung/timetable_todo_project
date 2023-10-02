@@ -13,9 +13,9 @@ export const darkTheme = {
   boxShadow: "none",
 };
 
-export const theme = {
+export const Theme = {
   lightTheme,
   darkTheme,
 };
 
-export default theme;
+export default Theme;
