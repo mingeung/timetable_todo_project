@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mingeung/timetable_todo_project/static/css/main.504e3509.css",
-    "main.js": "/mingeung/timetable_todo_project/static/js/main.69042bc3.js",
+    "main.js": "/mingeung/timetable_todo_project/static/js/main.29b11a2c.js",
     "index.html": "/mingeung/timetable_todo_project/index.html",
     "main.504e3509.css.map": "/mingeung/timetable_todo_project/static/css/main.504e3509.css.map",
-    "main.69042bc3.js.map": "/mingeung/timetable_todo_project/static/js/main.69042bc3.js.map"
+    "main.29b11a2c.js.map": "/mingeung/timetable_todo_project/static/js/main.29b11a2c.js.map"
   },
   "entrypoints": [
     "static/css/main.504e3509.css",
-    "static/js/main.69042bc3.js"
+    "static/js/main.29b11a2c.js"
   ]
 }
