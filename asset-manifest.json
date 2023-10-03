@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "//github.com/mingeung/timetable_todo_project/static/css/main.504e3509.css",
-    "main.js": "//github.com/mingeung/timetable_todo_project/static/js/main.15692364.js",
-    "index.html": "//github.com/mingeung/timetable_todo_project/index.html",
-    "main.504e3509.css.map": "//github.com/mingeung/timetable_todo_project/static/css/main.504e3509.css.map",
-    "main.15692364.js.map": "//github.com/mingeung/timetable_todo_project/static/js/main.15692364.js.map"
+    "main.css": "/mingeung/timetable_todo_project/static/css/main.504e3509.css",
+    "main.js": "/mingeung/timetable_todo_project/static/js/main.69042bc3.js",
+    "index.html": "/mingeung/timetable_todo_project/index.html",
+    "main.504e3509.css.map": "/mingeung/timetable_todo_project/static/css/main.504e3509.css.map",
+    "main.69042bc3.js.map": "/mingeung/timetable_todo_project/static/js/main.69042bc3.js.map"
   },
   "entrypoints": [
     "static/css/main.504e3509.css",
-    "static/js/main.15692364.js"
+    "static/js/main.69042bc3.js"
   ]
 }
